@@ -10,7 +10,7 @@
     <title>Index of an Equal sum</title>
   </head>
   <body>
-    <header>
+     <header>
       <ul class="headerList">
 	<li>
           <a href="https://odoo.com.hr/" target="_blank"><img src="../img/uvid_logo.png"/></a>
@@ -19,19 +19,19 @@
 	  <p>Stručan tim mladih ljudi s preko 10 godina iskustva u uvođenju poslovnih rješenja u Hrvatskoj i inozemstvu</p>
         </li>
       </ul>
-    </header>
-     <div id="warrning"></div>
-     <div id="splitIndex"></div>
+     </header>
+     <div class="result"></div>
      <div class="form">
        <h4 class="formTitle">Calculate your index</h4>
        <form onsubmit="findIndex(event)">
-            <input type="text" name="name" placeholder="Name" />
+            <input type="text" name="name" placeholder="Name" class="inputName" />
             <br />
-            <input type="text" name="surname" placeholder="Surname" />
+            <input type="text" name="surname" placeholder="Surname" class="inputSurname" />
             <br />
-            <input type="text" name="address" placeholder="Address" />
+            <input type="text" name="address" placeholder="Address" class="inputAddress" />
             <br />
             <br />
+	    <div id="warrningMessage"></div>
             <input type="text" name="array" placeholder="Enter an array of natural numbers" id="array" onkeypress="return checkInput(event)"/>
             <br />
             <input type="submit" value="Calculate">

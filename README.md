@@ -1,2 +1,2 @@
 # uvidFE
-Programming ability task fro Uvid d.o.o
+Programming ability task for Uvid d.o.o

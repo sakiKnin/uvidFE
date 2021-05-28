@@ -65,7 +65,13 @@ input[type=submit]:hover {
     background-color: #f2f2f2;
     padding: 20px;
     width: 80vh;
+    transform3d: translate3d(0,0,0);
+    transition: all 1s ease-out;
+}
 
+.form.close{
+    transform: translate3d(0,130%,0);
+    transition: all 1s ease-out;
 }
 
 .formTitle{
@@ -73,6 +79,26 @@ input[type=submit]:hover {
     font-size: large;
     color: #483D8B;
 
+}
+
+.result{
+
+    transform: translate3d(0,-1300%,0);
+    transition: all 1 ease-out;
+    
+}
+
+.result.show{
+
+    transform: translate3d(0,0,0);
+    transition: all 1 ease-out;
+
+}
+
+#resultMessage{
+
+    font-size: large;
+    color: #9900ff;
 }
 
 img{
@@ -92,6 +118,25 @@ img:hover {
     
 }
 
+button{
+
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    
+}
+
+#warrningMessage{
+
+    color: red;
+    
+}
 
 ::placeholder{
     

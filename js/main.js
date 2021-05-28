@@ -1,4 +1,31 @@
 const form = document.querySelector('.form')
+let result = document.querySelector('.result')
+const inputName = document.querySelector('.inputName')
+const inputSurname = document.querySelector('.inputSurname')
+const inputAddress = document.querySelector('.inputAddress')
+const inputArray = document.getElementById('array')
+
+function showForm()
+{
+
+    form.classList.remove('close')
+    result.classList.remove('show')
+  
+    for(var i=0; i < result.childNodes.length; i++)
+    {
+	
+	result.removeChild(result.childNodes[i])
+	
+    }
+   
+    result.removeChild(result.childNodes[0])
+    
+    inputName.value=""
+    inputSurname.value=""
+    inputAddress.value=""
+    inputArray.value=""
+
+}
 
 function findSplitPoint(arr)
 {
@@ -33,8 +60,8 @@ function findSplitPoint(arr)
 
 const findIndex = (event) => {
 
-           event.preventDefault();
-
+           event.preventDefault()
+    
 	   const name = event.target.elements.name.value
 
 	   const surname = event.target.elements.surname.value
@@ -49,25 +76,43 @@ const findIndex = (event) => {
 	             return
 	   }
 
+           form.classList.add('close')
+           result.classList.add('show')
+
 	   const arr = str.split(' ').filter(item => item!=='').map((item) => Number(item))
 
-	   let splitPoint = findSplitPoint(arr)
+           let splitPoint = findSplitPoint(arr)
 
+           var para = document.createElement("p")
+           var node = document.createTextNode("Name: " + name + " , " + "Surname: " + surname + " , " + "Address: " +address )
+           para.appendChild(node)
+           var element = document.querySelector('.result')
+           element.appendChild(para)
+    
 	   if(splitPoint===-1 || splitPoint===arr.length)
 	   {
 	       
-	       //document.getElementById("form").innerHTML = "Split point can't be found!"
-	       form.classList.add('close')
-	       
-	       
+	       para = document.createElement("h4")
+	       node = document.createTextNode("Split point can't be found!")
+	       para.appendChild(node)
+	       element.appendChild(para)
+	      	       
 	   }
 	   else
-	   {
-
-	       //document.getElementById("form").innerHTML = "Split point found at index: " + splitPoint
-
+           {
+	
+	       para = document.createElement("h4")
+	       node = document.createTextNode("Split point found at index: " + splitPoint)
+	       para.appendChild(node)
+	       element.appendChild(para)
+	      	       
 	   }
-	       
+    
+          para = document.createElement("button")
+          node = document.createTextNode("Back to form")
+          para.onclick = showForm
+          para.appendChild(node)
+          element.appendChild(para)
        }
        
 function checkInput(event)
@@ -77,11 +122,11 @@ function checkInput(event)
 	  	   
 	   if((keyCode < 48 || keyCode > 57) && keyCode!==32)
 	   {
-		   document.getElementById("warrning").innerHTML = "INVALID CHARACTER: " + event.key
+		   document.getElementById("warrningMessage").innerHTML = "INVALID CHARACTER: " + event.key
 	       
 	           setTimeout( function()
 	           {
-		       document.getElementById("warrning").innerHTML = ""
+		       document.getElementById("warrningMessage").innerHTML = ""
 	       
 	           }, 1000)
 
