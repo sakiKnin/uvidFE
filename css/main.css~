@@ -1,0 +1,20 @@
+*, *:befor, *:after{
+    box-sizing: border-box;
+}
+
+body {
+    background: #ECEBDA;
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+
+}
+
+
+.header{
+
+   color: red;
+
+}
