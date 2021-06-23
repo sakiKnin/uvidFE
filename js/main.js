@@ -45,7 +45,7 @@ function findSplitPoint(arr)
 
 	       }
 
-	       if(leftSum === rightSum)
+	       if(leftSum === rightSum && arr[i+1]===leftSum)
 	       {
 		   
 		   return i+1
